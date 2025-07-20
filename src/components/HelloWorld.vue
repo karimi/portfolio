@@ -54,9 +54,9 @@ function getLeft(index: number) {
     :class="[
       'absolute top-0 h-full w-2/3',
       index === next ? 'cursor-pointer inactive-slide' : '',
-      (index === active || index === next || index === ((active + 2) % slideContent.length) || index === ((active - 1 + slideContent.length) % slideContent.length))
-        ? ''
-        : 'invisible-slide'
+      (index !== active && index !== next && index !== ((active - 1 + slideContent.length) % slideContent.length))
+        ? 'opacity-0'
+        : ''
     ]"
     @click="index === next && goNext()"
   >
