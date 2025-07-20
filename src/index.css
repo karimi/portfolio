@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.img-bracket {
+  position: relative;
+  display: inline-block;
+}
+
+.img-bracket .corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 4px solid #333;
+  pointer-events: none;
+}
+
+.img-bracket .corner.tl {
+  top: -12px;
+  left: -12px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.img-bracket .corner.tr {
+  top: -12px;
+  right: -12px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.img-bracket .corner.bl {
+  bottom: -12px;
+  left: -12px;
+  border-right: none;
+  border-top: none;
+}
+
+.img-bracket .corner.br {
+  bottom: -12px;
+  right: -12px;
+  border-left: none;
+  border-top: none;
+}

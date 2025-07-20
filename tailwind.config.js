@@ -3,7 +3,17 @@ export default {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        serif: ['Merriweather', 'ui-serif'],
+      },
+      colors: {
+        primary: '#1e40af',
+        secondary: '#64748b',
+        accent: '#f59e42',
+      },
+    },
   },
   plugins: [],
 }

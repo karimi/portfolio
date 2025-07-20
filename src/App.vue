@@ -4,24 +4,31 @@ import { ref, watch } from 'vue';
 const showMenu = ref(false);
 const headerHeight = ref('64px');
 
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '#', label: 'About' },
+  { href: '/paintings', label: 'Paintings' },
+  { href: '#', label: 'Failed Attempts At Becoming Rich' },
+  { href: '#', label: 'Contact' }
+];
+
 watch(showMenu, (val) => {
   headerHeight.value = val ? '220px' : '64px'; // Adjust height as needed for menu items
 });
 </script>
 
 <template>
-  <div class="h-screen flex flex-col bg-gray-200">
+  <div class="h-screen flex flex-col bg-gray-300 font-sans font-extralight">
     <header
       class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300"
       :style="{ height: headerHeight }"
     >
       <div class="flex items-center justify-between px-6 py-4 h-[64px]">
-        <div class="text-xl font-bold">Branding</div>
+        <div class="text-xl font-bold">Morteza Karimi</div>
         <nav class="hidden md:flex space-x-6">
-          <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Projects</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+          <template v-for="link in links" :key="link.label">
+            <a :href="link.href" class="text-gray-700 hover:text-blue-600">{{ link.label }}</a>
+          </template>
         </nav>
         <button class="md:hidden flex items-center text-gray-700" @click="showMenu = !showMenu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,10 +44,9 @@ watch(showMenu, (val) => {
           style="overflow: hidden;"
         >
           <nav class="flex flex-col space-y-2">
-            <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600">Projects</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+            <template v-for="link in links" :key="link.label">
+              <a :href="link.href" class="text-gray-700 hover:text-blue-600">{{ link.label }}</a>
+            </template>
           </nav>
         </div>
       </transition>
