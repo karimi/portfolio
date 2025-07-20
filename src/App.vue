@@ -6,7 +6,7 @@ const showMenu = ref(false);
 
 <template>
   <div class="h-screen flex flex-col bg-gray-200">
-    <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <header class="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div class="flex items-center justify-between px-6 py-4">
         <div class="text-xl font-bold">Branding</div>
         <nav class="hidden md:flex space-x-6">
@@ -30,11 +30,15 @@ const showMenu = ref(false);
           <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
         </nav>
       </div>
+      <!-- Header separator -->
+      <div class="absolute left-[5px] right-[5px] bottom-0 h-[1px] bg-black"></div>
     </header>
     <div class="h-full">
       <RouterView />
     </div>
-    <footer class="fixed bottom-0 left-0 w-full bg-white shadow px-6 py-3 flex flex-col md:flex-row items-center justify-between z-50">
+    <footer class="fixed bottom-0 left-0 w-full px-6 py-3 flex flex-col md:flex-row items-center justify-between z-50 bg-transparent shadow-none">
+      <!-- Footer separator -->
+      <div class="absolute left-[5px] right-[5px] top-0 h-[1px] bg-black"></div>
       <div class="text-gray-700 text-sm">
         Contact: <a href="mailto:your@email.com" class="hover:text-blue-600">your@email.com</a>
       </div>
@@ -44,4 +48,3 @@ const showMenu = ref(false);
     </footer>
   </div>
 </template>
-
