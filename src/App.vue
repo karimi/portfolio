@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const showMenu = ref(false);
+const headerHeight = ref('64px');
+
+watch(showMenu, (val) => {
+  headerHeight.value = val ? '220px' : '64px'; // Adjust height as needed for menu items
+});
 </script>
 
 <template>
   <div class="h-screen flex flex-col bg-gray-200">
-    <header class="fixed top-0 left-0 w-full z-50 bg-transparent">
-      <div class="flex items-center justify-between px-6 py-4">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300"
+      :style="{ height: headerHeight }"
+    >
+      <div class="flex items-center justify-between px-6 py-4 h-[64px]">
         <div class="text-xl font-bold">Branding</div>
         <nav class="hidden md:flex space-x-6">
           <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
@@ -22,21 +30,33 @@ const showMenu = ref(false);
           </svg>
         </button>
       </div>
-      <div v-if="showMenu" class="md:hidden px-6 pb-4">
-        <nav class="flex flex-col space-y-2">
-          <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Projects</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
-        </nav>
-      </div>
+      <transition name="slide-fade">
+        <div
+          v-if="showMenu"
+          class="md:hidden px-6 pb-4"
+          style="overflow: hidden;"
+        >
+          <nav class="flex flex-col space-y-2">
+            <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">Projects</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+          </nav>
+        </div>
+      </transition>
       <!-- Header separator -->
       <div class="absolute left-[5px] right-[5px] bottom-0 h-[1px] bg-black"></div>
     </header>
-    <div class="h-full">
+    <main
+      class="flex-1 overflow-auto transition-all duration-300"
+      :style="{
+        marginTop: headerHeight,
+        marginBottom: '56px'
+      }"
+    >
       <RouterView />
-    </div>
-    <footer class="fixed bottom-0 left-0 w-full px-6 py-3 flex flex-col md:flex-row items-center justify-between z-50 bg-transparent shadow-none">
+    </main>
+    <footer class="fixed bottom-0 left-0 w-full px-6 py-3 flex flex-col md:flex-row items-center justify-between z-50 bg-transparent shadow-none" style="height:56px;">
       <!-- Footer separator -->
       <div class="absolute left-[5px] right-[5px] top-0 h-[1px] bg-black"></div>
       <div class="text-gray-700 text-sm">
@@ -48,3 +68,20 @@ const showMenu = ref(false);
     </footer>
   </div>
 </template>
+
+<style scoped>
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.slide-fade-enter-to,
+.slide-fade-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>

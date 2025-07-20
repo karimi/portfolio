@@ -53,14 +53,14 @@ function getLeft(index: number) {
     }"
     :class="[
       'absolute top-0 h-full w-2/3',
-      index === next ? 'cursor-pointer inactive-slide' : '',
+      (index === next || index === ((active - 1 + slideContent.length) % slideContent.length)) ? 'cursor-pointer inactive-slide' : '',
       (index !== active && index !== next && index !== ((active - 1 + slideContent.length) % slideContent.length))
-        ? 'opacity-0'
-        : ''
+      ? 'opacity-0'
+      : ''
     ]"
     @click="index === next && goNext()"
   >
-    <div class="flex flex-col justify-center h-full rounded-lg text-2xl font-bold space-y-4 w-full p-16">
+    <div class="flex flex-col justify-center h-full rounded-lg text-2xl font-bold space-y-4 w-full p-8 md:p-16">
       <template v-for="item in slide">
           <component :is="item" />
       </template>
