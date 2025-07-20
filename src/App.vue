@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 
 const showMenu = ref(false);
 const headerHeight = ref('64px');
 
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '#', label: 'About' },
+  { href: '/', label: 'About' },
   { href: '/paintings', label: 'Paintings' },
   { href: '#', label: 'Failed Attempts At Becoming Rich' },
   { href: '#', label: 'Contact' }
@@ -15,10 +14,50 @@ const links = [
 watch(showMenu, (val) => {
   headerHeight.value = val ? '220px' : '64px'; // Adjust height as needed for menu items
 });
+
+// Circle position
+const circleX = ref(window.innerWidth / 2 - 400);
+const circleY = ref(window.innerHeight / 2 - 400);
+
+
+function handleMove(e: MouseEvent | TouchEvent) {
+  let x = 0, y = 0;
+  if (e instanceof MouseEvent) {
+    x = e.clientX;
+    y = e.clientY;
+  } else if (e instanceof TouchEvent && e.touches.length) {
+    x = e.touches[0].clientX;
+    y = e.touches[0].clientY;
+  }
+  circleX.value = x - 400;
+  circleY.value = y - 400;
+}
+
+onMounted(() => {
+  window.addEventListener('mousemove', handleMove);
+  window.addEventListener('touchmove', handleMove);
+});
+onUnmounted(() => {
+  window.removeEventListener('mousemove', handleMove);
+  window.removeEventListener('touchmove', handleMove);
+});
+
 </script>
 
 <template>
-  <div class="h-screen flex flex-col bg-gray-300 font-sans font-extralight">
+  <div class="h-screen flex flex-col bg-gray-300 font-sans font-extralight relative overflow-hidden">
+    <!-- Moving Circle Underlay -->
+    <div
+      class="fixed top-0 left-0 pointer-events-none z-0"
+      :style="{
+        width: '800px',
+        height: '800px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle at center, #a7f3d0 60%, #38bdf8 100%)',
+        transform: `translate(${circleX}px, ${circleY}px)`,
+        transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)'
+      }"
+    ></div>
     <header
       class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300"
       :style="{ height: headerHeight }"
@@ -69,7 +108,7 @@ watch(showMenu, (val) => {
         Contact: <a href="mailto:your@email.com" class="hover:text-blue-600">your@email.com</a>
       </div>
       <div class="text-gray-500 text-xs mt-2 md:mt-0">
-        &copy; 2024 Your Name. All rights reserved.
+        &copy; 2025 Morteza Karimi. All rights reserved.
       </div>
     </footer>
   </div>
