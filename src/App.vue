@@ -74,7 +74,7 @@ onUnmounted(() => {
       :style="{ height: headerHeight }"
     >
       <div class="flex items-start justify-between px-6 py-4 h-[64px]">
-        <div class="text-xl font-bold">Morteza Karimi</div>
+        <img src="./assets/logo.svg" alt="Morteza Karimi Logo" class="h-8 w-auto" />
         <nav class="hidden md:flex space-x-6 relative"
         @mouseleave="(headerHeight = '64px')"
         >
