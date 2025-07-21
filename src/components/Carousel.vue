@@ -85,7 +85,7 @@ watch(active, (val) => {
       <div
         v-if="index === active"
         class="absolute right-0"
-        style="top:100px; bottom:80px; width:1px; background:black;"
+        style="top:20px; bottom:20px; width:1px; background:black;"
       ></div>
     </div>
   </div>

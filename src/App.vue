@@ -11,8 +11,14 @@ const links = [
     { href: '/art/paintings', label: 'Paintings' },
     { href: '/art/shows', label: 'Shows' }
   ]},
+  { href: '#', label: 'Recipes', children: [
+    { href: '#', label: 'Breakfast' },
+    { href: '#', label: 'Lunch' },
+    { href: '#', label: 'Dinner' }
+  ]},
+  { href: '#', label: 'Blog' },
   // { href: '#', label: 'Failed Attempts At Becoming Rich' }, 
-  { href: '#', label: 'Contact'}
+  { href: '#', label: 'Contact' }
 ];
 
 watch(showMenu, (val) => {
@@ -23,6 +29,7 @@ watch(showMenu, (val) => {
 const circleX = ref(window.innerWidth / 2 - 400);
 const circleY = ref(window.innerHeight / 2 - 400);
 
+const activeDropdown = ref<string | null>(null);
 
 function handleMove(e: MouseEvent | TouchEvent) {
   let x = 0, y = 0;
@@ -63,41 +70,43 @@ onUnmounted(() => {
       }"
     ></div>
     <header
-      class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300"
+      class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 overflow-hidden"
       :style="{ height: headerHeight }"
     >
       <div class="flex items-start justify-between px-6 py-4 h-[64px]">
         <div class="text-xl font-bold">Morteza Karimi</div>
-        <nav class="hidden md:flex space-x-6 relative">
+        <nav class="hidden md:flex space-x-6 relative"
+        @mouseleave="(headerHeight = '64px')"
+        >
           <template v-for="link in links" :key="link.label">
             <div
               class="flex flex-col items-center group relative"
-              @mouseenter="link.children && (headerHeight = '110px')"
-              @mouseleave="link.children && (headerHeight = '64px')"
+              @mouseenter="activeDropdown = link.label; link.children ? (headerHeight = '110px') : (headerHeight = '64px')"
             >
               <a
-                :href="link.href"
-                class="text-gray-700 px-2 py-1 transition-colors duration-200"
-                :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
+              :href="link.href"
+              class="text-gray-700 px-2 py-1 transition-colors duration-200 font-normal"
+              :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
               >
-                {{ link.label }}
+              {{ link.label }}
               </a>
               <div
-                v-if="link.children"
-                class="flex space-x-4 mt-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200"
+              v-if="link.children && activeDropdown === link.label"
+              class="absolute left-1/2 -translate-x-1/2 flex space-x-4 mt-1 transition-opacity duration-200"
+              :style="{ top: '40px' }"
               >
-                <a
-                  v-for="child in link.children"
-                  :key="child.label"
-                  :href="child.href"
-                  class="text-gray-700 hover:text-blue-600 whitespace-nowrap px-2 py-1"
-                >
-                  {{ child.label }}
-                </a>
+              <a
+                v-for="child in link.children"
+                :key="child.label"
+                :href="child.href"
+                class="text-gray-700 hover:text-blue-600 whitespace-nowrap px-2 py-1"
+              >
+                {{ child.label }}
+              </a>
               </div>
             </div>
-          </template>
-        </nav>
+            </template>
+          </nav>
         <button class="md:hidden flex items-center text-gray-700" @click="showMenu = !showMenu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -113,19 +122,24 @@ onUnmounted(() => {
         >
             <nav class="flex flex-col space-y-2">
                 <template v-for="link in links" :key="link.label">
-                <div>
-                  <a :href="link.href" class="text-gray-700 hover:text-blue-600 block">{{ link.label }}</a>
-                  <div v-if="link.children" class="flex flex-col space-y-1 pl-2 mt-1">
-                  <a
-                    v-for="child in link.children"
-                    :key="child.label"
-                    :href="child.href"
-                    class="text-gray-700 hover:text-blue-600 block font-extralight"
-                  >
-                    {{ child.label }}
-                  </a>
+                  <div class="flex items-center">
+                    <a :href="link.href" class="text-gray-700 hover:text-blue-600 block font-normal whitespace-nowrap">
+                      {{ link.label }}
+                    </a>
+                    <div
+                      v-if="link.children"
+                      class="flex flex-row space-x-2 ml-2"
+                    >
+                      <a
+                        v-for="child in link.children"
+                        :key="child.label"
+                        :href="child.href"
+                        class="text-gray-700 hover:text-blue-600 block font-extralight whitespace-nowrap"
+                      >
+                        {{ child.label }}
+                      </a>
+                    </div>
                   </div>
-                </div>
                 </template>
             </nav>
         </div>
