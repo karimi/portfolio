@@ -6,13 +6,17 @@ const headerHeight = ref('64px');
 
 const links = [
   { href: '/', label: 'About' },
-  { href: '/paintings', label: 'Paintings' },
-  { href: '#', label: 'Failed Attempts At Becoming Rich' },
-  { href: '#', label: 'Contact' }
+  { href: '#', label: 'Art', children: [
+    // { href: '/art/things', label: 'Things' },
+    { href: '/art/paintings', label: 'Paintings' },
+    { href: '/art/shows', label: 'Shows' }
+  ]},
+  // { href: '#', label: 'Failed Attempts At Becoming Rich' }, 
+  { href: '#', label: 'Contact'}
 ];
 
 watch(showMenu, (val) => {
-  headerHeight.value = val ? '220px' : '64px'; // Adjust height as needed for menu items
+  headerHeight.value = val ? '220px' : '64px';
 });
 
 // Circle position
@@ -62,11 +66,36 @@ onUnmounted(() => {
       class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300"
       :style="{ height: headerHeight }"
     >
-      <div class="flex items-center justify-between px-6 py-4 h-[64px]">
+      <div class="flex items-start justify-between px-6 py-4 h-[64px]">
         <div class="text-xl font-bold">Morteza Karimi</div>
-        <nav class="hidden md:flex space-x-6">
+        <nav class="hidden md:flex space-x-6 relative">
           <template v-for="link in links" :key="link.label">
-            <a :href="link.href" class="text-gray-700 hover:text-blue-600">{{ link.label }}</a>
+            <div
+              class="flex flex-col items-center group relative"
+              @mouseenter="link.children && (headerHeight = '110px')"
+              @mouseleave="link.children && (headerHeight = '64px')"
+            >
+              <a
+                :href="link.href"
+                class="text-gray-700 px-2 py-1 transition-colors duration-200"
+                :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
+              >
+                {{ link.label }}
+              </a>
+              <div
+                v-if="link.children"
+                class="flex space-x-4 mt-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200"
+              >
+                <a
+                  v-for="child in link.children"
+                  :key="child.label"
+                  :href="child.href"
+                  class="text-gray-700 hover:text-blue-600 whitespace-nowrap px-2 py-1"
+                >
+                  {{ child.label }}
+                </a>
+              </div>
+            </div>
           </template>
         </nav>
         <button class="md:hidden flex items-center text-gray-700" @click="showMenu = !showMenu">
@@ -82,11 +111,23 @@ onUnmounted(() => {
           class="md:hidden px-6 pb-4"
           style="overflow: hidden;"
         >
-          <nav class="flex flex-col space-y-2">
-            <template v-for="link in links" :key="link.label">
-              <a :href="link.href" class="text-gray-700 hover:text-blue-600">{{ link.label }}</a>
-            </template>
-          </nav>
+            <nav class="flex flex-col space-y-2">
+                <template v-for="link in links" :key="link.label">
+                <div>
+                  <a :href="link.href" class="text-gray-700 hover:text-blue-600 block">{{ link.label }}</a>
+                  <div v-if="link.children" class="flex flex-col space-y-1 pl-2 mt-1">
+                  <a
+                    v-for="child in link.children"
+                    :key="child.label"
+                    :href="child.href"
+                    class="text-gray-700 hover:text-blue-600 block font-extralight"
+                  >
+                    {{ child.label }}
+                  </a>
+                  </div>
+                </div>
+                </template>
+            </nav>
         </div>
       </transition>
       <!-- Header separator -->
