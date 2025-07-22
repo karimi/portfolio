@@ -2,7 +2,7 @@
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 
 const showMenu = ref(false);
-const headerHeight = ref('64px');
+const headerHeight = ref('40px');
 
 const links = [
   { href: '/', label: 'About' },
@@ -22,7 +22,7 @@ const links = [
 ];
 
 watch(showMenu, (val) => {
-  headerHeight.value = val ? '220px' : '64px';
+  headerHeight.value = val ? '220px' : '40px';
 });
 
 // Circle position
@@ -73,15 +73,17 @@ onUnmounted(() => {
       class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 overflow-hidden"
       :style="{ height: headerHeight }"
     >
-      <div class="flex items-start justify-between px-6 py-4 h-[64px]">
-        <img src="./assets/logo.svg" alt="Morteza Karimi Logo" class="h-8 w-auto" />
+      <div class="flex items-start justify-between px-2 py-1 h-[40px]">
+        <a href="/" @click.prevent="$router.push('/')">
+          <img src="./assets/logo.svg" alt="Morteza Karimi Logo" class="h-20 w-auto" @mouseenter="(headerHeight = '80px')" @mouseleave="(headerHeight = '40px')"/>
+        </a>
         <nav class="hidden md:flex space-x-6 relative"
-        @mouseleave="(headerHeight = '64px')"
+        @mouseleave="(headerHeight = '40px')"
         >
           <template v-for="link in links" :key="link.label">
             <div
               class="flex flex-col items-center group relative"
-              @mouseenter="activeDropdown = link.label; link.children ? (headerHeight = '110px') : (headerHeight = '64px')"
+              @mouseenter="activeDropdown = link.label; link.children ? (headerHeight = '80px') : (headerHeight = '40px')"
             >
               <a
               :href="link.href"
@@ -107,7 +109,7 @@ onUnmounted(() => {
             </div>
             </template>
           </nav>
-        <button class="md:hidden flex items-center text-gray-700" @click="showMenu = !showMenu">
+        <button class="md:hidden flex items-center text-gray-700 py-1" @click="showMenu = !showMenu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
@@ -120,27 +122,27 @@ onUnmounted(() => {
           class="md:hidden px-6 pb-4"
           style="overflow: hidden;"
         >
-            <nav class="flex flex-col space-y-2">
-                <template v-for="link in links" :key="link.label">
-                  <div class="flex items-center">
-                    <a :href="link.href" class="text-gray-700 hover:text-blue-600 block font-normal whitespace-nowrap">
-                      {{ link.label }}
-                    </a>
-                    <div
-                      v-if="link.children"
-                      class="flex flex-row space-x-2 ml-2"
+            <nav class="flex flex-col space-y-2 items-end text-right">
+              <template v-for="link in links" :key="link.label">
+                <div class="flex flex-col items-end w-full">
+                  <a :href="link.href" class="text-gray-700 hover:text-blue-600 block font-normal whitespace-nowrap">
+                    {{ link.label }}
+                  </a>
+                  <div
+                    v-if="link.children"
+                    class="flex flex-row space-x-2 mt-1"
+                  >
+                    <a
+                      v-for="child in link.children"
+                      :key="child.label"
+                      :href="child.href"
+                      class="text-gray-700 hover:text-blue-600 block font-extralight whitespace-nowrap"
                     >
-                      <a
-                        v-for="child in link.children"
-                        :key="child.label"
-                        :href="child.href"
-                        class="text-gray-700 hover:text-blue-600 block font-extralight whitespace-nowrap"
-                      >
-                        {{ child.label }}
-                      </a>
-                    </div>
+                      {{ child.label }}
+                    </a>
                   </div>
-                </template>
+                </div>
+              </template>
             </nav>
         </div>
       </transition>
