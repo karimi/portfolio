@@ -58,17 +58,19 @@ onUnmounted(() => {
 <template>
   <div class="h-screen flex flex-col bg-gray-300 font-sans font-extralight relative overflow-hidden">
     <!-- Moving Circle Underlay -->
+    <!--
     <div
       class="fixed top-0 left-0 pointer-events-none z-0"
       :style="{
-        width: '800px',
-        height: '800px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle at center, #a7f3d0 60%, #38bdf8 100%)',
-        transform: `translate(${circleX}px, ${circleY}px)`,
-        transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)'
+      width: '800px',
+      height: '800px',
+      borderRadius: '50%',
+      background: 'radial-gradient(circle at center, #a7f3d0 60%, #38bdf8 100%)',
+      transform: `translate(${circleX}px, ${circleY}px)`,
+      transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)',
       }"
     ></div>
+    -->
     <header
       class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 overflow-hidden"
       :style="{ height: headerHeight }"
