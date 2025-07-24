@@ -152,7 +152,7 @@ onUnmounted(() => {
       <div class="absolute left-[5px] right-[5px] bottom-0 h-[1px] bg-black"></div>
     </header>
     <main
-      class="flex-1 overflow-auto transition-all duration-300"
+      class="flex-1 overflow-hidden transition-all duration-300"
       :style="{
         marginTop: headerHeight,
         marginBottom: '56px'
