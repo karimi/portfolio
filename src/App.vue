@@ -77,7 +77,7 @@ onUnmounted(() => {
     >
       <div class="flex items-start justify-between px-2 py-1 h-[40px]">
         <a href="/" @click.prevent="$router.push('/')">
-          <img src="./assets/logo.svg" alt="Morteza Karimi Logo" class="h-20 w-auto" @mouseenter="(headerHeight = '80px')" @mouseleave="(headerHeight = '40px')"/>
+          <img src="./assets/logo_mk.svg" alt="Morteza Karimi Logo" class="h-8"/>
         </a>
         <nav class="hidden md:flex space-x-6 relative"
         @mouseleave="(headerHeight = '40px')"

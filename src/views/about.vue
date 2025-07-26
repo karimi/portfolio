@@ -1,8 +1,8 @@
 <template>
     <div class="min-h-screen flex flex-col justify-end pr-10">
-        <div>
-            <h1 class="text-[32px] font-bold mb-4 text-right">About</h1>
-            <h2 class="text-[20px] font-semibold mb-2 text-right">Morteza Karimi (مرتضی کریمی)</h2>
+        <div >
+            <h1 class=" text-3xl mb-4 text-right">About</h1>
+            <h2 class="text-2xl font-semibold mb-2 text-right"><span class=" text-sm font-light">(مرتضی کریمی)</span> Morteza Karimi</h2>
             <img
                 src="../assets/me.png"
                 alt=""
@@ -12,8 +12,19 @@
                 ); shape-margin:20px;"
             />
 
-            <p class="leading-[1.6] font-['Helvetica'] text-justify m-0 text-[14px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use.
+            <p class="leading-[1.6] font-['Helvetica'] text-justify m-0 text-sm pt-20 font-normal">
+               Hi, I'm Morteza, I'm a software developer with a background in architecture <span class="font-thin">(like building design, not software architecture)</span>. 
+               I made this website to share things I make and do.
+               <br />
+               <br />
+               I'm originally from Iran, my wife and I moved from New York to Seattle during the pandemic and we love it here!
+                <br />
+                <br />
+               I'm happily employed at <span class="font-bold">McNeel & Associates</span>, where I work on <a href="https://www.rhino3d.com/" class="text-blue-600 underline hover:text-blue-800 transition-colors">Rhino</a> and <a href="https://apps.apple.com/us/app/irhino-3d/id373666504" class="text-blue-600 underline hover:text-blue-800 transition-colors">iRhino3D</a>, which are CAD tools I used in my architecture career.
+               When I'm not coding, I enjoy paragliding, <a href="/art/paintings" class="text-blue-600 underline hover:text-blue-800 transition-colors">painting</a> and hiking in beautiful pacific northwest.
+                <br />
+                 <br />
+                I did some oil painting as a kid, but during the pandemic <span class="font-thin">(constrained by our tiny apartment in NYC)</span> I discovered gouache, and I feel way more comfortable with it than I ever did with oil paints. I like realism, so I usually paint from photographs, but I also enjoy painting from life when I can.
             </p>
 
         </div>
