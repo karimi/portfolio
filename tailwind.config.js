@@ -9,7 +9,7 @@ export default {
         serif: ['Merriweather', 'ui-serif'],
       },
       colors: {
-        primary: '#1e40af',
+        primary: 'rgb(0 54 255)',
         secondary: '#64748b',
         accent: '#f59e42',
       },
