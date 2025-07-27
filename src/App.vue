@@ -85,32 +85,32 @@ onUnmounted(() => {
           <template v-for="link in links" :key="link.label">
             <div
               class="flex flex-col items-center group relative"
-              @mouseenter="activeDropdown = link.label; link.children ? (headerHeight = '80px') : (headerHeight = '40px')"
+              @mouseenter="activeDropdown = link.label; link.children ? (headerHeight = '70px') : (headerHeight = '40px')"
             >
               <a
-              :href="link.href"
-              class="text-gray-700 px-2 py-1 transition-colors duration-200 font-normal"
-              :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
+          :href="link.href"
+          class="text-gray-700 px-2 py-1 transition-colors duration-200 font-normal"
+          :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
               >
-              {{ link.label }}
+          {{ link.label }}
               </a>
               <div
-              v-if="link.children && activeDropdown === link.label"
-              class="absolute left-1/2 -translate-x-1/2 flex space-x-4 mt-1 transition-opacity duration-200"
-              :style="{ top: '40px' }"
+          v-if="link.children && activeDropdown === link.label"
+          class="absolute left-1/2 -translate-x-1/2 flex space-x-4 transition-opacity duration-200"
+          :style="{ top: '100%' }"
               >
-              <a
-                v-for="child in link.children"
-                :key="child.label"
-                :href="child.href"
-                class="text-gray-700 hover:text-blue-600 whitespace-nowrap px-2 py-1"
-              >
-                {{ child.label }}
-              </a>
+          <a
+            v-for="child in link.children"
+            :key="child.label"
+            :href="child.href"
+            class="text-gray-700 hover:text-blue-600 whitespace-nowrap px-2 py-1"
+          >
+            {{ child.label }}
+          </a>
               </div>
             </div>
-            </template>
-          </nav>
+          </template>
+        </nav>
         <button class="md:hidden flex items-center text-gray-700 py-1" @click="showMenu = !showMenu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
