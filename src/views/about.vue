@@ -1,19 +1,19 @@
 <template>
-    <div class="min-h-screen flex flex-col justify-end pr-10">
+    <div class="min-h-screen flex flex-col justify-end pr-20 pt-20">
         <div >
-            <h1 class=" text-3xl mb-4 text-right">About</h1>
+            <h1 class="text-3xl mb-4 text-right">About</h1>
             <h2 class="text-2xl font-semibold mb-2 text-right"><span class=" text-sm font-light">(مرتضی کریمی)</span> Morteza Karimi</h2>
             <div class="flex flex-row gap-5 text-sm font-normal leading-[1.6] text-justify">
-                <div class="md:basis-3/5">
+                <div class="md:basis-1/2">
                     <img
                         src="../assets/me.png"
                         alt=""
-                        class="float-left w-[350px] mr-[20px]"
-                        style="max-width:50%;  shape-outside: polygon(
-                            94.1% 91.2%, 99.8% 100%, 0% 11.5%, 6.6% 6.7%, 18.4% 2.2%, 28.5% 0%, 48.2% 1.1%, 60.3% 3.9%, 66.7% 6.7%, 72.9% 7.9%, 83% 11.5%, 87.8% 15.5%, 86.4% 17.7%, 80.4% 19.1%, 71.2% 31.9%, 65.4% 37.9%, 68.6% 41.3%, 64.2% 43%, 64.2% 46.2%, 68.6% 47.2%, 77.2% 50.7%, 81.5% 54.7%, 87.1% 67.9%, 93.8% 80.7%, 94.1% 91.2%
+                        class="float-left mr-[20px] w-[200px] md:w-[300px]"
+                        style="margin-top:180px; shape-outside: polygon(
+                            94.1% calc(80% + 160px), 99.8% calc(89% + 160px), 0% 160px, 6.6% 160px, 18.4% 160px, 28.5% 160px, 48.2% calc(1.1% + 160px), 60.3% calc(3.9% + 160px), 66.7% calc(6.7% + 160px), 72.9% calc(7.9% + 160px), 83% calc(11.5% + 160px), 87.8% calc(15.5% + 160px), 86.4% calc(17.7% + 160px), 80.4% calc(19.1% + 160px), 71.2% calc(31.9% + 160px), 65.4% calc(37.9% + 160px), 68.6% calc(41.3% + 160px), 64.2% calc(43% + 160px), 64.2% calc(46.2% + 160px), 68.6% calc(47.2% + 160px), 77.2% calc(50.7% + 160px), 81.5% calc(54.7% + 160px), 87.1% calc(67.9% + 160px), 93.8% calc(75% + 160px), 94.1% calc(80% + 160px)
                         ); shape-margin:20px;"
                     />
-                    <p>
+                    <p class="pl-20">
                         Hi, I'm <b>Morteza</b>, I'm a software developer with a background in architecture <span class="font-thin">(like building design, not software architecture)</span>.
                         I made this website to share things I make and do.
                         <br />
@@ -31,7 +31,7 @@
                         </span>
                     </p>
                 </div>
-                <div class="basis-2/5 hidden md:block">
+                <div class="basis-1/2 hidden md:block">
                     <p>
                         When I'm not coding, I enjoy paragliding, <a href="/art/paintings" class="text-blue-600 underline hover:text-blue-800 transition-colors">painting</a> and hiking in beautiful pacific northwest.
                         <br />
