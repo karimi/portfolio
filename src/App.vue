@@ -87,26 +87,26 @@ onUnmounted(() => {
               class="flex flex-col items-center group relative"
               @mouseenter="activeDropdown = link.label; link.children ? (headerHeight = '70px') : (headerHeight = '40px')"
             >
-              <a
-          :href="link.href"
-          class="text-gray-700 px-2 py-1 transition-colors duration-200 font-normal"
-          :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
+              <RouterLink
+              :to="link.href"
+              class="text-gray-700 px-2 py-1 transition-colors duration-200 font-normal"
+              :class="link.children ? 'group-hover:text-blue-600' : 'hover:text-blue-600'"
               >
           {{ link.label }}
-              </a>
+              </RouterLink>
               <div
           v-if="link.children && activeDropdown === link.label"
           class="absolute left-1/2 -translate-x-1/2 flex space-x-4 transition-opacity duration-200"
           :style="{ top: '100%' }"
               >
-          <a
+          <RouterLink
             v-for="child in link.children"
             :key="child.label"
-            :href="child.href"
+            :to="child.href"
             class="text-gray-700 hover:text-blue-600 whitespace-nowrap px-2 py-1"
           >
             {{ child.label }}
-          </a>
+          </RouterLink>
               </div>
             </div>
           </template>
