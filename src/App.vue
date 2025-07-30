@@ -9,14 +9,13 @@ const links = [
   { href: '#', label: 'Art', children: [
     // { href: '/art/things', label: 'Things' },
     { href: '/art/paintings', label: 'Paintings' },
-    { href: '/art/shows', label: 'Shows' }
+    { href: '/art/commissions', label: 'Commissions' }
   ]},
-  { href: '#', label: 'Recipes', children: [
-    { href: '#', label: 'Breakfast' },
-    { href: '#', label: 'Lunch' },
-    { href: '#', label: 'Dinner' }
-  ]},
-  { href: '#', label: 'Blog' },
+  // { href: '#', label: 'Recipes', children: [
+  //   { href: '#', label: 'Breakfast' },
+  //   { href: '#', label: 'Lunch' },
+  //   { href: '#', label: 'Dinner' }
+  // ]},
   // { href: '#', label: 'Failed Attempts At Becoming Rich' }, 
   { href: '#', label: 'Contact' }
 ];
