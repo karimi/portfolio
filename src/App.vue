@@ -163,7 +163,7 @@ onUnmounted(() => {
       <!-- Footer separator -->
       <div class="absolute left-[5px] right-[5px] top-0 h-[1px] bg-black"></div>
       <div class="text-gray-700 text-sm">
-        Contact: <a href="mailto:your@email.com" class="hover:text-blue-600">your@email.com</a>
+        
       </div>
       <div class="text-gray-500 text-xs mt-2 md:mt-0">
         &copy; 2025 Morteza Karimi. All rights reserved.
