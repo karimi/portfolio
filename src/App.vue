@@ -163,7 +163,20 @@ onUnmounted(() => {
       <!-- Footer separator -->
       <div class="absolute left-[5px] right-[5px] top-0 h-[1px] bg-black"></div>
       <div class="text-gray-700 text-sm">
-        
+        <a
+          href="https://github.com/karimi"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center space-x-1 hover:text-blue-600 transition-colors"
+          aria-label="GitHub"
+        >
+          <img
+            src="./assets/github-mark.svg"
+            alt="GitHub"
+            class="w-5 h-5"
+          />
+          <span class="sr-only">GitHub</span>
+        </a>
       </div>
       <div class="text-gray-500 text-xs mt-2 md:mt-0">
         &copy; 2025 Morteza Karimi. All rights reserved.
