@@ -16,7 +16,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/portfolio/'),
+  // history: createWebHistory('/portfolio/'), //For directly serving from github pages
+  history: createWebHistory(),
   routes,
 });
 
