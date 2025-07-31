@@ -21,7 +21,7 @@ const links = [
 ];
 
 watch(showMenu, (val) => {
-  headerHeight.value = val ? '220px' : '40px';
+  headerHeight.value = val ? '170px' : '40px';
 });
 
 // Circle position
@@ -117,7 +117,7 @@ onUnmounted(() => {
           </svg>
         </button>
       </div>
-      <transition name="slide-fade">
+      <transition>
         <div
           v-if="showMenu"
           class="md:hidden px-6 pb-4"
@@ -159,7 +159,7 @@ onUnmounted(() => {
     >
       <RouterView />
     </main>
-    <footer class="fixed bottom-0 left-0 w-full px-6 py-3 flex flex-col md:flex-row items-center justify-between z-50 bg-transparent shadow-none" style="height:56px;">
+    <footer class="fixed bottom-0 left-0 w-full px-6 py-3 flex flex-row items-center justify-between z-50 bg-transparent shadow-none" style="height:56px;">
       <!-- Footer separator -->
       <div class="absolute left-[5px] right-[5px] top-0 h-[1px] bg-black"></div>
       <div class="text-gray-700 text-sm">
@@ -191,19 +191,5 @@ html, body, #app {
   overflow: hidden;
   margin: 0;
   padding: 0;
-}
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: opacity 0.3s, transform 0.3s;
-}
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.slide-fade-enter-to,
-.slide-fade-leave-from {
-  opacity: 1;
-  transform: translateY(0);
 }
 </style>
