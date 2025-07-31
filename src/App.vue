@@ -55,7 +55,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="h-screen flex flex-col bg-gray-300 font-sans font-extralight relative overflow-hidden">
+  <div class="h-screen flex flex-col bg-gray-300 font-sans font-extralight relative overflow-hidden" style="height: 100dvh; overflow: hidden;">
     <!-- Moving Circle Underlay -->
     <!--
     <div
@@ -151,7 +151,7 @@ onUnmounted(() => {
       <div class="absolute left-[5px] right-[5px] bottom-0 h-[1px] bg-black"></div>
     </header>
     <main
-      class="flex-1 overflow-hidden transition-all duration-300"
+      class="flex-1 min-h-0 overflow-hidden transition-all duration-300"
       :style="{
         marginTop: headerHeight,
         marginBottom: '56px'
@@ -186,6 +186,12 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+html, body, #app {
+  height: 100dvh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: opacity 0.3s, transform 0.3s;
