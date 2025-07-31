@@ -39,7 +39,7 @@
         {
             route: 'cat',
             content: [
-            h('b', 'Cat'),
+            h('b', 'Cat in Tours'),
             h('img', { src: catImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
                 h('p', { class: 'text-sm ' }, 'Guache on paper'),
@@ -85,9 +85,9 @@
             ]
         },
         {
-            route: 'maman',
+            route: 'roadtrip',
             content: [
-            h('b', 'Maman'),
+            h('b', 'Road Trip'),
             h('img', { src: mamanImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
                 h('p', { class: 'text-sm ' }, 'Guache on paper'),
