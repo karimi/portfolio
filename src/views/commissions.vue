@@ -12,16 +12,17 @@
                 <a href="mailto:email@mortezakarimi.com" class="text-blue-600 underline">email@mortezakarimi.com</a>
             </p>
         </div>
-        <div class="flex-1 pb-56">
-            <span class="img-bracket" style="position:relative;display:inline-block;">
-                <img
-                    src="/src/assets/paintings/commission.png"
-                    alt="Sample painting"
-                />
-                <span class="corner tl"></span>
-                <span class="corner tr"></span>
-                <span class="corner bl"></span>
-                <span class="corner br"></span>
+        <div class="flex-1 flex items-stretch">
+            <span class="img-bracket m-auto" style="position:relative;display:inline-block;">
+            <img
+            src="/src/assets/paintings/commission.png"
+            alt="Sample painting"
+            style="max-height:80vh;height:80%;object-fit:contain;display:block;"
+            />
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
             </span>
         </div>
     </div>
