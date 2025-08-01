@@ -61,18 +61,6 @@
             ]
         },
         {
-            route: 'jaguar',
-            content: [
-            h('b', 'Jaguar'),
-            h('img', { src: jaguarImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
-            h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
-                h('p', { class: 'text-sm ' }, '24 x 18 inches'),
-            ]),
-            h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
-            ]
-        },
-        {
             route: 'lullaby',
             content: [
             h('b', 'Lullaby'),
@@ -179,7 +167,6 @@ import am300Img from '../assets/paintings/300am.jpeg'
 import atrainImg from '../assets/paintings/atrain.jpeg'
 import catImg from '../assets/paintings/cat.jpeg'
 import fredricksteadImg from '../assets/paintings/fredrickstead.jpeg'
-import jaguarImg from '../assets/paintings/jaguar.jpeg'
 import lullabyImg from '../assets/paintings/lullaby.jpeg'
 import mamanImg from '../assets/paintings/maman.jpeg'
 import mesimeriImg from '../assets/paintings/mesimeri.jpeg'
