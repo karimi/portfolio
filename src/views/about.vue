@@ -1,8 +1,8 @@
 <template>
-    <div class="pr-5 md:pr-20 pl-5 md:pl-0 pb-52 md:pb-0 pt-5 md:pt-20 md:max-h-none md:overflow-visible max-h-screen overflow-auto">
+    <div class="pr-5 md:pr-20 pl-5 md:pl-0 pb-56 md:pb-0 pt-5 md:pt-20 md:max-h-none md:overflow-visible max-h-screen overflow-auto">
         <div>
             <div class="flex flex-row items-center mb-8">
-                <div class=" w-20 flex-shrink-0 block md:hidden">
+                <div class="w-24 flex-shrink-0 block md:hidden">
                     <img
                         src="../assets/me_mobile.png"
                         alt="Morteza Karimi"
@@ -18,17 +18,18 @@
             </div>
             <!-- Mobile content -->
             <div class="block md:hidden text-sm leading-[1.6] text-justify">
-                <p >
+                <p>
                     Hi, I'm <b>Morteza</b>, I'm a software developer with a background in architecture <span class="font-thin">(like building design, not software architecture)</span>.
                     I made this website to share things I make and do.
                     <br /><br />
-                    I'm originally from Iran, my wife and I moved from New York to Seattle during the pandemic and we love it here!
+                    I grew up in Iran, moved from New York to Seattle with my wife during the pandemic, and we’re loving the PNW life.
                     <br /><br />
-                    I'm happily employed at <span class="font-bold">McNeel & Associates</span>, where I work on <a href="https://www.rhino3d.com/" class="text-blue-600 underline hover:text-blue-800 transition-colors">Rhino</a> and <a href="https://apps.apple.com/us/app/irhino-3d/id373666504" class="text-blue-600 underline hover:text-blue-800 transition-colors">iRhino3D</a>, which are CAD tools I used in my architecture career.
+                    I work at <span class="font-bold">McNeel & Associates</span> on <a href="https://www.rhino3d.com/" class="text-blue-600 underline hover:text-blue-800 transition-colors">Rhino</a> and <a href="https://apps.apple.com/us/app/irhino-3d/id373666504" class="text-blue-600 underline hover:text-blue-800 transition-colors">iRhino3D</a>—the same CAD tools I used back in my architecture days.
+                </p>
+                <p>
+                    When I'm not coding, I'm probably paragliding, <a href="/art/paintings" class="text-blue-600 underline hover:text-blue-800 transition-colors">painting</a>, or hiking somewhere green.
                     <br /><br />
-                    When I'm not coding, I enjoy paragliding, <a href="/art/paintings" class="text-blue-600 underline hover:text-blue-800 transition-colors">painting</a> and hiking in beautiful pacific northwest.
-                    <br /><br />
-                    I did some oil painting as a kid, but during the pandemic <span class="font-thin">(constrained by our tiny apartment in NYC)</span> I discovered gouache, and I feel way more comfortable with it than I ever did with oil paints. I like realism, so I usually paint from photographs, but I also enjoy painting from life when I can.
+                    I started painting when I was younger using oil paints but it's been a while, during the pandemic <span class="font-thin">(constrained by our tiny apartment in NYC)</span> I discovered gouache, and I felt way more comfortable with it than I ever did with oil paints. I like realism, so I usually paint from photographs, but I also enjoy painting from life when I can.
                 </p>
             </div>
 
@@ -47,26 +48,23 @@
                         Hi, I'm <b>Morteza</b>, I'm a software developer with a background in architecture <span class="font-thin">(like building design, not software architecture)</span>.
                         I made this website to share things I make and do.
                         <br /><br />
-I grew up in Iran, moved from New York to Seattle with my wife during the pandemic, and we’re loving the PNW life.
-            <br /><br />
-            I work at <span class="font-bold">McNeel & Associates</span> on <a href="https://www.rhino3d.com/" class="text-blue-600 underline hover:text-blue-800 transition-colors">Rhino</a> and <a href="https://apps.apple.com/us/app/irhino-3d/id373666504" class="text-blue-600 underline hover:text-blue-800 transition-colors">iRhino3D</a>—the same CAD tools I used back in my architecture days.
+                        I grew up in Iran, moved from New York to Seattle with my wife during the pandemic, and we’re loving the PNW life.
+                        <br /><br />
+                        I work at <span class="font-bold">McNeel & Associates</span> on <a href="https://www.rhino3d.com/" class="text-blue-600 underline hover:text-blue-800 transition-colors">Rhino</a> and <a href="https://apps.apple.com/us/app/irhino-3d/id373666504" class="text-blue-600 underline hover:text-blue-800 transition-colors">iRhino3D</a>—the same CAD tools I used back in my architecture days.
                     </p>
                 </div>
                 <div class="basis-1/2">
                     <p>
- When I'm not coding, I'm probably paragliding, <a href="/art/paintings" class="text-blue-600 underline hover:text-blue-800 transition-colors">painting</a>, or hiking somewhere green.
-           
+                        When I'm not coding, I'm probably paragliding, <a href="/art/paintings" class="text-blue-600 underline hover:text-blue-800 transition-colors">painting</a>, or hiking somewhere green.
                         <br /><br />
                         I started painting when I was younger using oil paints but it's been a while, during the pandemic <span class="font-thin">(constrained by our tiny apartment in NYC)</span> I discovered gouache, and I felt way more comfortable with it than I ever did with oil paints. I like realism, so I usually paint from photographs, but I also enjoy painting from life when I can.
                     </p>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
 
-<!-- After a long break, I started painting again during the pandemic, I tried gouache for the first time since oil paint was too big of a mess for our tiny New York apartment. I loved it and have been painting regularly since then. -->
 <script>
 export default {
     name: 'About',

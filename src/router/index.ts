@@ -6,11 +6,15 @@ const routes: Array<RouteRecordRaw> = [
     name: 'About',
     component: () => import('../views/about.vue'),
   },
-
-   {
+  {
     path: '/art/paintings',
     name: 'Paintings',
     component: () => import('../views/paintings.vue'),
+  },
+  {
+    path: '/art/commissions',
+    name: 'Commissions',
+    component: () => import('../views/commissions.vue'),
   },
   // Add more routes here
 ];
