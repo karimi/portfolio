@@ -7,8 +7,8 @@
                 <br />
                 <a href="mailto:email@mortezakarimi.com" class="text-blue-600 underline">email@mortezakarimi.com</a>
                 <br />
-                <p>Actually, I'm on LinkedIn too: <a href="https://www.linkedin.com/in/mortza" class="text-blue-600 underline">linkedin.com/in/mortza</a></p>
-                <p>And GitHub: <a href="https://github.com/karimi" class="text-blue-600 underline">github.com/karimi</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/mortza" class="text-blue-600 underline">linkedin.com/in/mortza</a></p>
+                <p>GitHub: <a href="https://github.com/karimi" class="text-blue-600 underline">github.com/karimi</a></p>
             </p>
         </div>
     </div>
