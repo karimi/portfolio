@@ -16,8 +16,8 @@ const links = [
   //   { href: '#', label: 'Lunch' },
   //   { href: '#', label: 'Dinner' }
   // ]},
-  // { href: '#', label: 'Failed Attempts At Becoming Rich' }, 
-  { href: '#', label: 'Contact' }
+  // { href: '#', label: 'Failed Attempts At Becoming Rich' },
+  { href: '/contact', label: 'Contact' }
 ];
 
 watch(showMenu, (val) => {

@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Commissions',
     component: () => import('../views/commissions.vue'),
   },
+    {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/contact.vue'),
+  },
   // Add more routes here
 ];
 
