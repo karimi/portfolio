@@ -6,7 +6,7 @@
             h('b',  'Clove'),
             h('img', { src: cloveImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -18,7 +18,7 @@
             h('b', '3:00 AM'),
             h('img', { src: am300Img, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -30,7 +30,7 @@
             h('b', 'A Train'),
             h('img', { src: atrainImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -42,7 +42,7 @@
             h('b', 'Cat in Tours'),
             h('img', { src: catImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -54,7 +54,7 @@
             h('b', 'Fredrickstead'),
             h('img', { src: fredricksteadImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -66,7 +66,7 @@
             h('b', 'Lullaby'),
             h('img', { src: lullabyImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -78,7 +78,7 @@
             h('b', 'Road Trip'),
             h('img', { src: mamanImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -90,7 +90,7 @@
             h('b', 'Mesimeri'),
             h('img', { src: mesimeriImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -102,7 +102,7 @@
             h('b', 'On Ice'),
             h('img', { src: oniceImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -114,7 +114,7 @@
             h('b', 'Raw'),
             h('img', { src: rawImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -126,7 +126,7 @@
             h('b', 'Rise'),
             h('img', { src: riseImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -138,7 +138,7 @@
             h('b', 'Utah'),
             h('img', { src: utahImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
@@ -150,7 +150,7 @@
             h('b', 'We Are The Sea'),
             h('img', { src: wearetheseaImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
             h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
-                h('p', { class: 'text-sm ' }, 'Guache on paper'),
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
                 h('p', { class: 'text-sm ' }, '24 x 18 inches'),
             ]),
             h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
