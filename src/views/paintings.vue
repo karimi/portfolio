@@ -13,6 +13,18 @@
             ]
         },
         {
+            route: 'bunnychow',
+            content: [
+            h('b',  'Bunny Chow'),
+            h('img', { src: bunnychowImg, class: 'w-full object-contain', style: 'max-width:100%; max-height:60vh;' }),
+            h('div', { style: 'display: flex; justify-content: space-between; gap: 1rem;' }, [
+                h('p', { class: 'text-sm ' }, 'Gouache on paper'),
+                h('p', { class: 'text-sm ' }, '24 x 18 inches'),
+            ]),
+            h('p', { class: 'text-sm font-light', style: 'margin-left:auto;' }, '2025')
+            ]
+        },
+        {
             route: '300am',
             content: [
             h('b', '3:00 AM'),
@@ -163,6 +175,7 @@
 import Carousel from '../components/Carousel.vue'
 import { h } from 'vue'
 import cloveImg from '../assets/paintings/clove.jpeg'
+import bunnychowImg from '../assets/paintings/bunnychow.jpeg'
 import am300Img from '../assets/paintings/300am.jpeg'
 import atrainImg from '../assets/paintings/atrain.jpeg'
 import catImg from '../assets/paintings/cat.jpeg'
