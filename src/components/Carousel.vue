@@ -60,7 +60,7 @@ onMounted(scrollToActive)
           ]"
           @click="active = index"
         >
-        <div class="flex flex-col justify-center h-full-lg text-2xl font-bold space-y-4 w-full p-8 md:p-16">
+        <div class="flex flex-col h-full text-2xl font-bold space-y-4 w-full p-8 md:p-16 overflow-y-auto">
           <slot name="slide" :slide="slide" :index="index" :active="active === index"></slot>
           <div
             class="absolute right-0"
