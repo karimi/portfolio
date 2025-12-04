@@ -8,13 +8,13 @@ const route = useRoute()
 import { defineProps } from 'vue'
 
 const props = defineProps<{
-  slideContent: Array<{
+  slides: Array<{
     route: string,
-    content: any[]
+    [key: string]: any
   }>
 }>()
 
-const slideContent = props.slideContent
+const slideContent = props.slides
 
 const active = ref(0)
 const carouselRef = ref<HTMLElement | null>(null)
@@ -61,20 +61,7 @@ onMounted(scrollToActive)
           @click="active = index"
         >
         <div class="flex flex-col justify-center h-full-lg text-2xl font-bold space-y-4 w-full p-8 md:p-16">
-          <template v-for="item in slide.content">
-            <template v-if="item.type === 'img' || (item.tag && item.tag === 'img')">
-              <span class="img-bracket" style="position:relative;display:inline-block;">
-                <component :is="item" />
-                <span class="corner tl"></span>
-                <span class="corner tr"></span>
-                <span class="corner bl"></span>
-                <span class="corner br"></span>
-              </span>
-            </template>
-            <template v-else>
-              <component :is="item" />
-            </template>
-          </template>
+          <slot name="slide" :slide="slide" :index="index" :active="active === index"></slot>
           <div
             class="absolute right-0"
             style="top:20px; bottom:20px; width:1px; background:black;"

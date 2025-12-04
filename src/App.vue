@@ -17,6 +17,7 @@ const links = [
   //   { href: '#', label: 'Dinner' }
   // ]},
   // { href: '#', label: 'Failed Attempts At Becoming Rich' },
+  { href: '/recipes', label: 'Recipes' },
   { href: '/contact', label: 'Contact' }
 ];
 
