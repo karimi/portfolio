@@ -18,14 +18,54 @@ const slideContent = props.slides
 
 const active = ref(0)
 const carouselRef = ref<HTMLElement | null>(null)
+const isUserScrolling = ref(true)
+let scrollTimeout: number | null = null
 
 function scrollToActive() {
+  isUserScrolling.value = false
   nextTick(() => {
     const el = carouselRef.value?.children[active.value] as HTMLElement
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
     }
+    // Re-enable scroll watcher after animation completes
+    setTimeout(() => {
+      isUserScrolling.value = true
+    }, 500)
   })
+}
+
+function updateActiveFromScroll() {
+  if (!isUserScrolling.value) return
+  if (!carouselRef.value) return
+
+  if (scrollTimeout) clearTimeout(scrollTimeout)
+
+  scrollTimeout = setTimeout(() => {
+    const scrollContainer = carouselRef.value?.parentElement
+    if (!scrollContainer) return
+
+    const scrollRect = scrollContainer.getBoundingClientRect()
+    const scrollCenter = scrollRect.left + scrollRect.width / 2
+
+    let closestIndex = 0
+    let closestDistance = Infinity
+
+    Array.from(carouselRef.value!.children).forEach((child, index) => {
+      const childRect = (child as HTMLElement).getBoundingClientRect()
+      const childCenter = childRect.left + childRect.width / 2
+      const distance = Math.abs(scrollCenter - childCenter)
+
+      if (distance < closestDistance) {
+        closestDistance = distance
+        closestIndex = index
+      }
+    })
+
+    if (active.value !== closestIndex) {
+      active.value = closestIndex
+    }
+  }, 100)
 }
 
 // On mount, set active from URL if present
@@ -41,7 +81,14 @@ watch(active, (val) => {
   scrollToActive()
 })
 
-onMounted(scrollToActive)
+onMounted(() => {
+  scrollToActive()
+
+  // Add scroll listener to update active slide - listen on parent container
+  if (carouselRef.value) {
+    carouselRef.value.parentElement?.addEventListener('scroll', updateActiveFromScroll)
+  }
+})
 </script>
 
 <template>
